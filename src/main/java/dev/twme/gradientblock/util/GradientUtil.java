@@ -22,7 +22,7 @@ public class GradientUtil {
             BlockType blockType = textureUtil.getNearestBlock(color);
             return Material.getMaterial(blockType.getId().replaceAll("minecraft:", "").toUpperCase());
         } catch (Exception e) {
-            return Material.BLACK_STAINED_GLASS;
+            return ConfigUtil.GUI_ITEM_TYPE;
         }
     }
 }

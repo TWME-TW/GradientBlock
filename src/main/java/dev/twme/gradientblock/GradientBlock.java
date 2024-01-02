@@ -2,6 +2,7 @@ package dev.twme.gradientblock;
 
 import dev.twme.gradientblock.commands.MainCommand;
 import dev.twme.gradientblock.listener.GuiListener;
+import dev.twme.gradientblock.util.ConfigUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -13,6 +14,7 @@ public final class GradientBlock extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         instance = this;
+        ConfigUtil.loadConfig();
         registerCommands();
         registerListeners();
     }

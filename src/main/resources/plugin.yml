@@ -6,20 +6,21 @@ depend:
   - FastAsyncWorldEdit
 authors:
   - TWME
-description: A plugin that allows you to create blocks with a gradient.
+website: "https://github.com/TWME-TW/GradientBlock"
+description: "An architect's tool that can generate a gradient-colored block arrangement using two blocks."
 commands:
   gradientblock:
-    description: Opens the GradientBlock GUI.
+    description: "Opens the GradientBlock GUI."
     usage: /<command>
     aliases:
       - gb
     permission: gradientblock.use
-    permission-message: You don't have permission to use this command.
+    permission-message: "You don't have permission to use this command."
     tab-completions:
       - gradientblock
       - gb
       - gblock
 permissions:
   gradientblock.use:
-    description: Allows you to use the GradientBlock GUI.
+    description: "Allows you to use the GradientBlock GUI."
     default: true

@@ -1,6 +1,7 @@
 package dev.twme.gradientblock.commands;
 
 import dev.twme.gradientblock.GradientBlock;
+import dev.twme.gradientblock.util.ConfigUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -17,22 +18,22 @@ public class MainCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
         if (!(commandSender instanceof Player)) {
-            commandSender.sendMessage("You must be a player to use this command!");
+            commandSender.sendMessage(ConfigUtil.NEED_PLAYER);
             return true;
         }
 
         Player player = (Player) commandSender;
 
         if (!player.hasPermission("gradientblock.use")) {
-            player.sendMessage("You do not have permission to use this command!");
+            player.sendMessage(ConfigUtil.NO_PERMISSION);
             return true;
         }
 
-        Inventory inventory = Bukkit.createInventory(null, 9, "漸層方塊產生器");
+        Inventory inventory = Bukkit.createInventory(null, 9, ConfigUtil.GUI_TITLE);
 
-        ItemStack itemStack = new ItemStack(Material.BLACK_STAINED_GLASS);
+        ItemStack itemStack = new ItemStack(ConfigUtil.GUI_ITEM_TYPE);
         ItemMeta itemMeta = itemStack.getItemMeta();
-        itemMeta.setDisplayName("請將兩個方塊分別放置在兩邊的格子中");
+        itemMeta.setDisplayName(ConfigUtil.GUI_ITEM_NAME);
         itemStack.setItemMeta(itemMeta);
 
         inventory.setItem(1, itemStack);
