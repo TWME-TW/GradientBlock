@@ -15,8 +15,10 @@ public class GradientUtil {
             b2 = BlockTypes.get("minecraft:" + m2.name().toLowerCase());
 
             int color, c1, c2;
-
-            TextureUtil textureUtil = Fawe.instance().getCachedTextureUtil(true, 0, 73);
+            if (maxComplexity == -1){
+                maxComplexity = 73;
+            }
+            TextureUtil textureUtil = Fawe.instance().getCachedTextureUtil(true, 0, maxComplexity);
             TextureUtil t1 = Fawe.instance().getCachedTextureUtil(true, 0, 100);
 
             c1 = textureUtil.getColor(b1);

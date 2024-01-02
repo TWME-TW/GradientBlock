@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public class GradientData {
 
-    int maxComplexity = 73;
+    int maxComplexity = -1;
     Material a = null, b = null;
     public static HashMap<UUID, GradientData> gradientDataHashMap = new HashMap<>();
 
