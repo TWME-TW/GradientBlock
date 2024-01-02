@@ -11,6 +11,7 @@ Placing two blocks in the GUI will generate a gradient block arrangement; then, 
 
 ## Permission
  - `gradientblock.use`
+ - `gradientblock.reload`
 
 ## depend
  - FastAsyncWorldEdit
