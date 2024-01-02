@@ -64,6 +64,9 @@ public class GuiListener implements Listener {
             return;
         }
 
+        if (GradientData.gradientDataHashMap.get(playerUUID) == null){
+
+        }
         if (event.getSlot() == 0) {
             gradientData.setMaterialA(event.getCursor().getType());
             GradientData.gradientDataHashMap.put(playerUUID, gradientData);
@@ -74,12 +77,12 @@ public class GuiListener implements Listener {
             GradientData.gradientDataHashMap.put(playerUUID, gradientData);
 
         }
-
-        if (null == gradientData.getMaterialA() || null == gradientData.getMaterialB()) {
+        GradientData gradientData1 = GradientData.gradientDataHashMap.get(playerUUID);
+        if (null == gradientData1.getMaterialA() || null == gradientData1.getMaterialB()) {
             return;
         }
 
-        event.getInventory().setContents(gradientData.gradient());
+        event.getInventory().setContents(gradientData1.gradient());
         player.updateInventory();
 
         return;
