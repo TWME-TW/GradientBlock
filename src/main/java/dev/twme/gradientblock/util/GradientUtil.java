@@ -10,6 +10,7 @@ public class GradientUtil {
     public static Material getBlock(Material m1, Material m2, int maxComplexity) {
 
         BlockType b1, b2;
+        int staticComplexity = 100;
         try {
             b1 = BlockTypes.get("minecraft:" + m1.name().toLowerCase());
             b2 = BlockTypes.get("minecraft:" + m2.name().toLowerCase());
@@ -17,9 +18,11 @@ public class GradientUtil {
             int color, c1, c2;
             if (maxComplexity == -1){
                 maxComplexity = 73;
+            } else {
+                staticComplexity = maxComplexity;
             }
             TextureUtil textureUtil = Fawe.instance().getCachedTextureUtil(true, 0, maxComplexity);
-            TextureUtil t1 = Fawe.instance().getCachedTextureUtil(true, 0, 100);
+            TextureUtil t1 = Fawe.instance().getCachedTextureUtil(true, 0, staticComplexity);
 
             c1 = textureUtil.getColor(b1);
             c2 = textureUtil.getColor(b2);
