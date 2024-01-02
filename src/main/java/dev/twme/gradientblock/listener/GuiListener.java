@@ -20,8 +20,6 @@ public class GuiListener implements Listener {
 
         Player player = (Player) event.getWhoClicked();
 
-        player.sendMessage(event.getAction().name() + " " + event.getSlot());
-
 
         UUID playerUUID = player.getUniqueId();
         if (!player.hasMetadata("gradientblock")) {
@@ -75,12 +73,11 @@ public class GuiListener implements Listener {
             gradientData.setMaterialB(event.getCursor().getType());
             GradientData.gradientDataHashMap.put(playerUUID, gradientData);
         }
-        player.sendMessage("1");
 
         if (gradientData.getMaterialA() == null || gradientData.getMaterialB() == null) {
             return;
         }
-        player.sendMessage("2");
+
         event.getInventory().setContents(gradientData.gradient());
         player.updateInventory();
 
