@@ -10,7 +10,7 @@ description: A plugin that allows you to create blocks with a gradient.
 commands:
   gradientblock:
     description: Opens the GradientBlock GUI.
-    usage: /<command> [reload]
+    usage: /<command>
     aliases:
       - gb
     permission: gradientblock.use
@@ -19,3 +19,7 @@ commands:
       - gradientblock
       - gb
       - gblock
+permissions:
+  gradientblock.use:
+    description: Allows you to use the GradientBlock GUI.
+    default: true
