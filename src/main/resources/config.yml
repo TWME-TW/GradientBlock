@@ -1,6 +1,9 @@
 commands:
   no-permission: "§6Gradient Block §7>> §cYou do not have permission to use this command."
   need-player: "§6Gradient Block §7>> §cYou must be a player to use this command."
+  complexity-need-integer: "§6Gradient Block §7>> §cThe complexity must be an integer."
+  complexity-range: "§6Gradient Block §7>> §cThe complexity must be between 1 and 100."
+  reload: "§6Gradient Block §7>> §aConfig reloaded."
 
 gui:
   title: "§6Gradient Block"

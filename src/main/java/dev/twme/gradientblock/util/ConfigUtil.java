@@ -11,9 +11,14 @@ import java.nio.charset.StandardCharsets;
 public class ConfigUtil {
     public static String NO_PERMISSION;
     public static String NEED_PLAYER;
+    public static String COMPLEXITY_NEED_INTEGER;
+    public static String COMPLEXITY_RANGE;
+    public static String RELOAD_MESSAGE;
     public static String GUI_TITLE;
     public static String GUI_ITEM_NAME;
     public static Material GUI_ITEM_TYPE;
+
+
 
     public static void loadConfig() {
         String path = "config.yml";
@@ -32,9 +37,12 @@ public class ConfigUtil {
         config.addDefaults(defaultConfig);
 
         NO_PERMISSION = config.getString("commands.no-permission");
-        NEED_PLAYER =  config.getString("commands.need-player");
+        NEED_PLAYER = config.getString("commands.need-player");
         GUI_TITLE = config.getString("gui.title");
         GUI_ITEM_NAME = config.getString("gui.item-name");
-        GUI_ITEM_TYPE = Material.getMaterial( config.getString("gui.item-type"));
+        GUI_ITEM_TYPE = Material.getMaterial(config.getString("gui.item-type"));
+        COMPLEXITY_NEED_INTEGER = config.getString("commands.complexity-need-integer");
+        COMPLEXITY_RANGE = config.getString("commands.complexity-range");
+        RELOAD_MESSAGE = config.getString("commands.reload");
     }
 }

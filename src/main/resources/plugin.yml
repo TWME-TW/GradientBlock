@@ -11,16 +11,21 @@ description: "An architect's tool that can generate a gradient-colored block arr
 commands:
   gradientblock:
     description: "Opens the GradientBlock GUI."
-    usage: /<command>
+    usage: /<command> [complexity/reload]
     aliases:
       - gb
+      - gblock
     permission: gradientblock.use
     permission-message: "You don't have permission to use this command."
     tab-completions:
       - gradientblock
       - gb
       - gblock
+
 permissions:
   gradientblock.use:
     description: "Allows you to use the GradientBlock GUI."
-    default: true
+    default: op
+  gradientblock.reload:
+    description: "Allows you to reload the GradientBlock config."
+    default: op

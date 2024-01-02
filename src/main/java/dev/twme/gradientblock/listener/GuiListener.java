@@ -20,6 +20,8 @@ public class GuiListener implements Listener {
 
         Player player = (Player) event.getWhoClicked();
 
+        player.sendMessage(event.getAction().name() + " " + event.getSlot());
+
 
         UUID playerUUID = player.getUniqueId();
         if (!player.hasMetadata("gradientblock")) {
@@ -49,6 +51,7 @@ public class GuiListener implements Listener {
             for (int i = 0; i <= 8; i++) {
                 player.getInventory().setItem(i, itemStacks[i]);
             }
+            GradientData.gradientDataHashMap.remove(playerUUID);
             player.updateInventory();
             player.closeInventory();
             return;
@@ -64,25 +67,21 @@ public class GuiListener implements Listener {
             return;
         }
 
-        if (GradientData.gradientDataHashMap.get(playerUUID) == null){
-
-        }
         if (event.getSlot() == 0) {
             gradientData.setMaterialA(event.getCursor().getType());
             GradientData.gradientDataHashMap.put(playerUUID, gradientData);
-
         }
         if (event.getSlot() == 8) {
             gradientData.setMaterialB(event.getCursor().getType());
             GradientData.gradientDataHashMap.put(playerUUID, gradientData);
-
         }
-        GradientData gradientData1 = GradientData.gradientDataHashMap.get(playerUUID);
-        if (null == gradientData1.getMaterialA() || null == gradientData1.getMaterialB()) {
+        player.sendMessage("1");
+
+        if (gradientData.getMaterialA() == null || gradientData.getMaterialB() == null) {
             return;
         }
-
-        event.getInventory().setContents(gradientData1.gradient());
+        player.sendMessage("2");
+        event.getInventory().setContents(gradientData.gradient());
         player.updateInventory();
 
         return;

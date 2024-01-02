@@ -25,6 +25,7 @@ public final class GradientBlock extends JavaPlugin {
     }
 
     private void registerCommands() {
+        this.getCommand("gradientblock").setTabCompleter(new MainCommand());
         this.getCommand("gradientblock").setExecutor(new MainCommand());
     }
 
@@ -34,5 +35,9 @@ public final class GradientBlock extends JavaPlugin {
 
     public static GradientBlock getInstance() {
         return instance;
+    }
+
+    public static void reload() {
+        ConfigUtil.loadConfig();
     }
 }
