@@ -19,9 +19,8 @@ public class GuiListener implements Listener {
     public void onInventoryClick(InventoryClickEvent event) {
 
         Player player = (Player) event.getWhoClicked();
-
-
         UUID playerUUID = player.getUniqueId();
+
         if (!player.hasMetadata("gradientblock")) {
             return;
         }
@@ -35,8 +34,8 @@ public class GuiListener implements Listener {
 
         GradientData gradientData = new GradientData();
 
-        if (GradientData.gradientDataHashMap.containsKey(player.getUniqueId())) {
-            gradientData = GradientData.gradientDataHashMap.get(player.getUniqueId());
+        if (GradientData.gradientDataHashMap.containsKey(playerUUID)) {
+            gradientData = GradientData.gradientDataHashMap.get(playerUUID);
         }
 
         if (event.getSlot() >= 1 && event.getSlot() <= 7) {
@@ -49,7 +48,6 @@ public class GuiListener implements Listener {
             for (int i = 0; i <= 8; i++) {
                 player.getInventory().setItem(i, itemStacks[i]);
             }
-            GradientData.gradientDataHashMap.remove(playerUUID);
             player.updateInventory();
             player.closeInventory();
             return;

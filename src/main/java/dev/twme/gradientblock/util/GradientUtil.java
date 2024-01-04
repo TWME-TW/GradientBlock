@@ -22,17 +22,21 @@ public class GradientUtil {
                 staticComplexity = maxComplexity;
             }
             TextureUtil textureUtil = Fawe.instance().getCachedTextureUtil(true, 0, maxComplexity);
-            TextureUtil t1 = Fawe.instance().getCachedTextureUtil(true, 0, staticComplexity);
+
 
             c1 = textureUtil.getColor(b1);
             c2 = textureUtil.getColor(b2);
 
             if (c1 == 0) {
+                TextureUtil t1 = Fawe.instance().getCachedTextureUtil(true, 0, staticComplexity);
                 c1 = t1.getColor(b1);
             }
             if (c2 == 0) {
+                TextureUtil t1 = Fawe.instance().getCachedTextureUtil(true, 0, staticComplexity);
                 c2 = t1.getColor(b2);
             }
+
+            staticComplexity = 100;
 
             color = TextureUtil.averageColor(c1, c2);
 

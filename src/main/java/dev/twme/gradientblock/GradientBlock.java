@@ -12,7 +12,6 @@ public final class GradientBlock extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         instance = this;
         ConfigUtil.loadConfig();
         registerCommands();
@@ -21,7 +20,6 @@ public final class GradientBlock extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
     }
 
     private void registerCommands() {

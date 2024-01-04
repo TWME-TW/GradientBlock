@@ -33,9 +33,14 @@ public class MainCommand implements CommandExecutor, TabCompleter {
             player.sendMessage(ConfigUtil.NO_PERMISSION);
             return true;
         }
+
+        if (strings.length > 1) {
+            return false;
+        }
+
         if (strings.length == 1) {
             if ("reload".equals(strings[0].toLowerCase())) {
-                if (!player.hasPermission("gradientblock.reload")){
+                if (!player.hasPermission("gradientblock.reload")) {
                     player.sendMessage(ConfigUtil.NO_PERMISSION);
                     return true;
                 }
