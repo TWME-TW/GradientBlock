@@ -19,7 +19,6 @@ public class ConfigUtil {
     public static Material GUI_ITEM_TYPE;
 
 
-
     public static void loadConfig() {
         String path = "config.yml";
 

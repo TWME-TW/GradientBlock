@@ -16,7 +16,7 @@ public class GradientUtil {
             b2 = BlockTypes.get("minecraft:" + m2.name().toLowerCase());
 
             int color, c1, c2;
-            if (maxComplexity == -1){
+            if (maxComplexity == -1) {
                 maxComplexity = 73;
             } else {
                 staticComplexity = maxComplexity;
