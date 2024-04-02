@@ -6,7 +6,7 @@
 
   <groupId>dev.twme</groupId>
   <artifactId>GradientBlock</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.5</version>
   <packaging>jar</packaging>
 
   <name>GradientBlock</name>
@@ -85,4 +85,18 @@
           <scope>provided</scope>
       </dependency>
   </dependencies>
+
+  <distributionManagement>
+
+      <repository>
+          <id>twme-repo-snapshots</id>
+          <url>https://repo.twme.dev/snapshots</url>
+      </repository>
+      <!--
+      <repository>
+          <id>twme-repo-releases</id>
+          <url>https://repo.twme.dev/releases</url>
+      </repository>
+      -->
+    </distributionManagement>
 </project>

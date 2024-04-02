@@ -5,6 +5,7 @@ import com.fastasyncworldedit.core.util.TextureUtil;
 import com.sk89q.worldedit.world.block.BlockType;
 import com.sk89q.worldedit.world.block.BlockTypes;
 import org.bukkit.Material;
+import org.bukkit.block.data.BlockData;
 
 public class GradientUtil {
     public static Material getBlock(Material m1, Material m2, int maxComplexity) {
@@ -28,12 +29,12 @@ public class GradientUtil {
             c2 = textureUtil.getColor(b2);
 
             if (c1 == 0) {
-                TextureUtil t1 = Fawe.instance().getCachedTextureUtil(true, 0, staticComplexity);
-                c1 = t1.getColor(b1);
+                BlockData blockData = m1.createBlockData();
+                c1 = blockData.getMapColor().asARGB();
             }
             if (c2 == 0) {
-                TextureUtil t1 = Fawe.instance().getCachedTextureUtil(true, 0, staticComplexity);
-                c2 = t1.getColor(b2);
+                BlockData blockData = m2.createBlockData();
+                c2 = blockData.getMapColor().asARGB();
             }
 
             staticComplexity = 100;
